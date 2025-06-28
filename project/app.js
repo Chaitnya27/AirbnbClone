@@ -47,21 +47,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 // Session store setup
-const store = MongoStore.create({
-    mongoUrl: dbUrl,
-    crypto: {
-        secret: "mysupersecrete",
-    },
-    touchAfter: 24 * 3600
-});
+// const store = MongoStore.create({
+//     mongoUrl: dbUrl,
+//     crypto: {
+//         secret: "mysupersecrete",
+//     },
+//     touchAfter: 24 * 3600
+// });
 
-store.on("error", (err) => {
-    console.log("Mongo session store error:", err);
-});
+// store.on("error", (err) => {
+//     console.log("Mongo session store error:", err);
+// });
 
 // Session configuration
 const sessionOptions = {
-    store,
+    // store,
     secret: "mysupersecrete",
     resave: false,
     saveUninitialized: true,
